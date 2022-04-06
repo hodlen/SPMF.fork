@@ -545,7 +545,7 @@ public class AlgoCloFast {
 
             switch (node.getType()) {
                 case closed:
-                    out.write(node.toString() + System.lineSeparator());
+                    out.write(node.toString() + node.getVerticalIdList().toString() + System.lineSeparator());
                     countClosed++;
                     break;
                 case pruned:

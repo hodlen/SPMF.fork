@@ -1,5 +1,8 @@
 package ca.pfv.spmf.algorithms.sequentialpatterns.clofast.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 * This file is part of the SPMF DATA MINING SOFTWARE
 * (http://www.philippe-fournier-viger.com/spmf).
@@ -32,5 +35,23 @@ public class VerticalIdList {
 
     public ListNode[] getElements() {
         return elements;
+    }
+
+    private List<String> getCoveredSequnceIds() {
+        ArrayList<String> seqIds = new ArrayList<String>();
+
+        for (int i = 0; i < elements.length; i++) {
+            ListNode element = elements[i];
+            if (element != null) {
+                seqIds.add(Integer.toString(i));
+            }
+        }
+
+        return seqIds;
+    }
+
+    @Override
+    public String toString() {
+        return " #SID: " + String.join(" ", getCoveredSequnceIds());
     }
 }
